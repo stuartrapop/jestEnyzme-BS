@@ -1,7 +1,5 @@
 import checkPropTypes from 'check-prop-types';
 
-
-
 /**
  * Return node(s) with the given data-test attribute.
  * @param {ShallowWrapper} wrapper -Enyzme shallow wrapper
