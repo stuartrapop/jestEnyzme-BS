@@ -4,7 +4,7 @@ import  successReducer  from './successReducer';
 
 
 test('returns default initial state of `false` when no action is passed', () => {
-  const newState = successReducer(undefined, {  });
+  const newState = successReducer(undefined, {});
   expect(newState).toBe(false);
 });
 
