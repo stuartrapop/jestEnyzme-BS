@@ -59,7 +59,6 @@ test('`getSecretWord` runs on App mount',() => {
 
   // check to see if mock ran
   const getSecretWordCallCount = getSecretWordMock.mock.calls.length;
-
   expect(getSecretWordCallCount).toBe(1);
 
 });
