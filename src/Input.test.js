@@ -79,26 +79,19 @@ describe('`guessWord` action creator using mock function', () => {
   beforeEach(() => {
     //create a mock function for getSecretWord
     guessWordMock = jest.fn();
-
     const props = {
       guessWord: guessWordMock,
     }
-
     //set up Input with guessWordMock as a prop
     wrapper = shallow(<UnconnectedInput {...props} />);
 
     //add value to input box
     wrapper.setState({currentGuess: guessedWord});
 
-
     //simulate click on submit button
     const submitButton = findByTestAttr(wrapper, 'submit-button');
     submitButton.simulate('click', {preventDefault()  {} });
-  })
-
-  
-
-
+  });
 
   test('action creater called when submit button called', () => {
 
@@ -112,6 +105,12 @@ describe('`guessWord` action creator using mock function', () => {
     const guessedWordArg = guessWordMock.mock.calls[0][0];
 
     expect(guessedWordArg).toBe(guessedWord);
-  })
+  });
 
-})
+  test('input box clears on submit',() => {
+    expect(wrapper.state('currentGuess')).toBe('');
+
+
+  } );
+
+});
